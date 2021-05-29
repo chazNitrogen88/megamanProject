@@ -957,3 +957,40 @@ System memory in use after: 154.8 MB.
 Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2428.
 Total: 2.170665 ms (FindLiveObjects: 0.209099 ms CreateObjectMapping: 0.062278 ms MarkObjects: 1.782817 ms  DeleteObjects: 0.115578 ms)
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000579 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.42 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.046 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.37 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1812 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.0 MB.
+System memory in use after: 155.0 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2432.
+Total: 2.193668 ms (FindLiveObjects: 0.258592 ms CreateObjectMapping: 0.060066 ms MarkObjects: 1.766174 ms  DeleteObjects: 0.107925 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 6510.646602 seconds.
+  path: Assets/Scripts/player1Controller.cs
+  artifactKey: Guid(bcc39b7775f7c496da37d07f50e4850c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/player1Controller.cs using Guid(bcc39b7775f7c496da37d07f50e4850c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cd3ed825818261091a1e118f8271916') in 0.004927 seconds
+  Import took 0.008950 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004739 seconds.
+  path: Assets/Scripts/player1Controller.cs
+  artifactKey: Guid(bcc39b7775f7c496da37d07f50e4850c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/player1Controller.cs using Guid(bcc39b7775f7c496da37d07f50e4850c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cd3ed825818261091a1e118f8271916') in 0.001191 seconds
+  Import took 0.004147 seconds .
+

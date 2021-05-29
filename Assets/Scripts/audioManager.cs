@@ -20,6 +20,7 @@ public class audioManager : MonoBehaviour
     {
         foreach(Sound noise in sounds)
         {
+            
             Debug.Log("hey");
             noise.source = gameObject.AddComponent<AudioSource>();
             noise.source.clip = noise.clip;
