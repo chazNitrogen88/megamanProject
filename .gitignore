@@ -1,0 +1,7 @@
+/Temp
+# /Logs
+/UserSettings
+/Library
+.DS_Store
+*.sln
+*.csproj
