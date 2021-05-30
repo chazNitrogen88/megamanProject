@@ -154,10 +154,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - clipName: Landing
+    clip: {fileID: 8300000, guid: 98f8a78af361d4eb5b65cfab2bca2622, type: 3}
+    source: {fileID: 0}
+  - clipName: Death
     clip: {fileID: 8300000, guid: f65e54e2f31f0410491dc75700af0672, type: 3}
     source: {fileID: 0}
-  - clipName: 
-    clip: {fileID: 0}
+  - clipName: Hurt
+    clip: {fileID: 8300000, guid: b077c6d8b9f7d4c37bcfd6fb4b299b4c, type: 3}
     source: {fileID: 0}
 --- !u!4 &414229206
 Transform:

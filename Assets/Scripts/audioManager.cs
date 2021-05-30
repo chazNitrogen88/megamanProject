@@ -22,6 +22,7 @@ public class audioManager : MonoBehaviour
         {
             
             Debug.Log("hey");
+            
             noise.source = gameObject.AddComponent<AudioSource>();
             noise.source.clip = noise.clip;
             soundMap[noise.clipName] = noise.source;

@@ -24,6 +24,8 @@ public class player1Controller : MonoBehaviour
     private bool isSliding = false;
     private bool isHurt = false;
     private bool isRunning = false;
+    // private bool isJumping = false;
+    // private bool jumpCanceled = false;
     private string directionFacing = "left";
 
     void Start()
@@ -97,8 +99,16 @@ public class player1Controller : MonoBehaviour
 
         if(Input.GetKey("/") && !isSliding)
         {
-            if(isGrounded) rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+            // isJumping = true;
+            if(isGrounded) 
+            {
+            rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+
+            }
         }
+        // } else isJumping = false;
+
+        // if(!isJumping) rb.velocity = new Vector2(rb.velocity.x, 0);
         
         // if(Input.GetKey("q"))
 
@@ -186,12 +196,15 @@ public class player1Controller : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        FindObjectOfType<audioManager>().play("Hurt");
+        animator.Play("hurtMegaman");
         Debug.Log(health);
         if(health <= 0) Die();
     }
     void Die()
     {
         Instantiate(deathEffect, transform.position, Quaternion.identity);
+        FindObjectOfType<audioManager>().play("Death");
         Destroy(gameObject);
     }
 

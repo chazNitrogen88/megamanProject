@@ -9,6 +9,7 @@ public class player2Controller : MonoBehaviour
     [SerializeField]
     public float jumpSpeed = 12;
     private float shootWaitTime = 0.2f; // seconds
+    private float hurtWaitTime = 1f;
 
     [SerializeField]
     public Transform groundCheck1;
@@ -16,6 +17,8 @@ public class player2Controller : MonoBehaviour
     public Rigidbody2D  rb { get; set; }
     public SpriteRenderer spriteRenderer { get; set; }
     public IEnumerator routineLeash;
+    public IEnumerator hurtRoutineLeash;
+
 
     private bool isShooting = false;
     private bool isGrounded = false;
@@ -91,6 +94,9 @@ public class player2Controller : MonoBehaviour
 
         if(isHurt)
         {
+            Debug.Log("is");
+            // handleHurt();
+            animator.Play("hurtProtoman");
             //hurt animation
         }else
         {
@@ -157,17 +163,35 @@ public class player2Controller : MonoBehaviour
         isShooting = false;
         
     }
+    private IEnumerator HurtTimer()
+    {
+        yield return new WaitForSeconds(hurtWaitTime);
+        isHurt = false;
+        
+    }
+
+    void handleHurt()
+    {
+        if(hurtRoutineLeash != null)StopCoroutine(hurtRoutineLeash);
+
+        hurtRoutineLeash = HurtTimer();
+        StartCoroutine(hurtRoutineLeash);
+    }
     public GameObject deathEffect;
     private int health = 100;
     public void TakeDamage(int damage)
     {
         health -= damage;
+        FindObjectOfType<audioManager>().play("Hurt");
+        handleHurt();
+        isHurt = true;
         Debug.Log(health);
         if(health <= 0) Die();
     }
     void Die()
     {
         Instantiate(deathEffect, transform.position, Quaternion.identity);
+        FindObjectOfType<audioManager>().play("Death");
         Destroy(gameObject);
     }
     void OnCollisionEnter2D(Collision2D collidedObject)
